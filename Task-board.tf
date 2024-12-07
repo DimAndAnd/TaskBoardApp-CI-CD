@@ -5,6 +5,12 @@ terraform {
       version = "4.12.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "StorageRG"
+    storage_account_name = "dianderstoragetb"
+    container_name       = "storagetaskboard"
+    key                  = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
